@@ -40,4 +40,4 @@ console.log(str1,arr1)
 }
 
 const aaa = sameFrequency('aabs','baa')
-console.log(aaa)
+console.log(aaa,'test')
