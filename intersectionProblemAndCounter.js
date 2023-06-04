@@ -33,6 +33,7 @@ function counter(arr1,arr2){
         }
     
     }
+    // 物件跑法
     for(let property in counterObj){
         if(counterObj[property] >= 2){
             results.push(property);
