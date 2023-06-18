@@ -1,2 +1,4 @@
-# algorithm
-演算法練習
+# Udemy課程練習
+## algorithm
+
+## weirdJS 
