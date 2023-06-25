@@ -1,4 +1,7 @@
-// 65. 初始化
+'use strict'; 
+// 嚴格模式在javascript檔案中放在最上方可使用
+// 可以避免不宣告變數就直接使用變數造成的錯誤
+// 也可以放在function中單獨使用，那就只會在function中單獨使用嚴格模式。
 
 // 66. 
 
@@ -32,3 +35,5 @@ console.log(e instanceof Person); // e的原型練上是否有Person，有的話
 
 console.log(typeof undefined);  // undefined
 console.log(typeof null); // JS bug 結果為物件
+
+
