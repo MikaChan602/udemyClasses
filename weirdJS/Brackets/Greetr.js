@@ -1,19 +1,22 @@
 (function (global, $) {
+  // 'new' an Object
   var Greetr = function (firstName, lastName, language) {
     return new Greetr.init(firstName, lastName, language);
   };
-
+  // hidden within the scope of the IIFE and never directly accessible;
   var supportedLangs = ["en", "es"]; // 隱蔽變數，外部無法取用;
-  // 在此設定的東西，可確保外層無法變更他。
+
+  // informal greetings
   const greetings = {
     en: "Hello",
     es: "Hola",
   };
-
+  // formal greetings
   const formalGreetings = {
     en: "Greetings",
     es: "Saludos",
   };
+  // formal greetings
   const logMessages = {
     en: "Logged in",
     es: "Inicia sesión",
@@ -25,6 +28,8 @@
       return this.firstName + " " + this.lastName;
     },
     validate: function () {
+      // check that is a valid language
+      // references the externally inaccessible 'supportedLangs' within the closure
       if (supportedLangs.indexOf(this.language) === -1) {
         throw "Invalid language";
       }
@@ -34,13 +39,7 @@
       return greetings[this.language] + " " + this.firstName + "!";
     },
     formalGreeting: function () {
-      return (
-        formalGreetings[this.language] +
-        " " +
-        this.firstName +
-        " " +
-        this.lastName
-      );
+      return formalGreetings[this.language] + ", " + this.fullName();
     },
 
     greet: function (formal) {
@@ -68,6 +67,26 @@
     setLang: function (lang) {
       this.language = lang;
       this.validate();
+      // make chainable
+      return this;
+    },
+    HTMLGreeting: function (selector, formal) {
+      if (!$) {
+        throw "jQuery not loaded";
+      }
+
+      if (!selector) {
+        throw "Missing jQuery selector";
+      }
+      // determine the message
+      var msg;
+      if (formal) {
+        msg = this.formalGreeting();
+      } else {
+        msg = this.greeting();
+      }
+
+      $(selector).html(msg);
       return this;
     },
   };
@@ -85,4 +104,4 @@
 
   global.Greetr = global.$G = Greetr;
   return global.Greetr;
-})(window, $);
+})(window, jQuery);
