@@ -1,1 +1,140 @@
 
+body{
+    background-color: gray;
+}
+.container{
+    width: 580px;
+    height: 580px;
+    background-color: ivory;
+    padding: 0px;
+    // 置中
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border-radius:20px;
+}
+.clock{
+    width: 500px;
+    height: 500px;
+    background-color: #f3deee;
+    border:10px solid #f8bef7;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    .hour{
+        font-family: sans-serif;
+        font-size: 50px;
+        font-weight: bold;
+        color: white;
+        position: absolute;
+        z-index: 12;
+    }
+    .hr1{
+        top:8%;
+        right: 22%;
+    }
+    .hr2{
+        top:110px;
+        right: 40px;
+    }
+    .hr3{
+        top:210px;
+        right: 10px;
+    }
+    .hr4{
+        top: 320px;
+        right: 40px;
+    }
+    .hr5{
+        top: 410px;
+        right: 120px;
+    }
+    .hr5{
+        top: 410px;
+        right: 120px;
+    }
+    .hr6{
+        top: 430px;
+        right: 230px;
+    }
+    .hr7{
+        bottom: 20px;
+        right: 340px;
+    }
+    .hr8{
+        top: 320px;
+        right: 420px;
+    }
+    .hr9{
+        top: 210px;
+        right: 450px;
+    }
+    .hr10{
+        top: 110px;
+        right: 396px;
+    }
+    .hr11{
+        top: 30px;
+        right: 317px;
+
+    }
+    .hr12{
+        top: 10px;
+        right: 210px;
+    }
+    /* 時針、分針、秒針*/
+    .hand {
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        background-color: white;
+        transform:translateX(-50%);
+        border-top-right-radius:10px;
+        border-top-left-radius: 10px;
+        /* 從底部來轉 */
+        transform-origin: bottom;
+        --rotation:0;
+        transform: rotate(calc(var(--rotation)*1deg));
+        z-index: 15;
+    } 
+    .second-hand{
+        left: 49.5%;
+        width: 3px;
+        height: 45%;
+        background-color: rgb(251, 239, 239);
+        z-index: 13;
+    }
+    .minute-hand{
+        left: 49.2%;
+        width: 6px;
+        height: 34%;
+        background-color: rgb(251, 239, 239);
+        z-index: 13;
+    }
+    .hour-hand{
+        left: 49.2%;
+        width: 9px;
+        height: 28%;
+        background-color: #f4f4f4;
+        z-index: 13;
+    }
+}
+
+
+
+// 中心點
+.point{
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 240px;
+    left: 240px;
+    z-index: 100;
+}
